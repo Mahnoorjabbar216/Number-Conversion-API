@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="stylesheet.css">
+        <title>Number Conversion API</title>
+    </head>
+
+    <body>
+        <h2>🔢 Number Conversion API</h2>
+        <p class="subtitle">Convert numbers to words or dollars instantly.</p>
+        <input type="number" id="numberInput" placeholder="enter a number">
+        <select id="conversionType">
+            <option value="NumberToWords">Number to Words</option>
+            <option value="NumberToDollars">Number to Dollars</option>
+        </select>
+        <br>
+        <button onclick="convertNumber()">Convert</button>
+        <div id="result"></div>
+
+        <!-- Custom Modal -->
+        <div id="customModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <p id="modalMessage"></p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
