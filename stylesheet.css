@@ -7,12 +7,22 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    text-align: center;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     align-items: center;
-    padding-top: 50px; /* Top alignment */
+    justify-content: center;
+}
+
+/* Main Container */
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
 }
 
 /* =========================
@@ -33,14 +43,31 @@ h2 {
 /* =========================
    Inputs & Select
 ========================= */
-input, select {
-    padding: 10px 12px;
-    margin: 10px;
+input {
+    padding: 10px 2px;
+    margin: 8px 0;
     font-size: 1rem;
     border-radius: 6px;
     border: none;
     outline: none;
-    width: 230px;
+    width: 100%;
+    background: #f9f9f9;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: all 0.2s ease-in-out;
+}
+
+::placeholder{
+    padding-left: 5px;
+}
+select {
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    width: 100%;
     background: #f9f9f9;
     color: #333;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -56,7 +83,7 @@ input:focus, select:focus {
    Button Styling
 ========================= */
 button {
-    padding: 10px 20px;
+    padding: 12px;
     background: #a0c4ff; /* Default soft blue */
     border: none;
     border-radius: 6px;
@@ -66,6 +93,8 @@ button {
     color: #333;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     transition: all 0.25s ease;
+    width: 100%;
+    margin-top: 12px;
 }
 
 button:hover {
@@ -78,22 +107,19 @@ button:active {
 }
 
 /* =========================
-   Modal Background
+   Modal (unchanged)
 ========================= */
 .modal {
-    display: none; /* hidden by default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0; top: 0;
     width: 100%; height: 100%;
     background-color: rgba(0,0,0,0.35);
-    backdrop-filter: blur(4px); /* soft blur effect */
+    backdrop-filter: blur(4px);
     animation: fadeIn 0.3s ease-in-out;
 }
 
-/* =========================
-   Modal Content Box
-========================= */
 .modal-content {
     background: linear-gradient(135deg, #e6b8d5, #fceabb);
     margin: 15% auto;
@@ -110,9 +136,6 @@ button:active {
     position: relative;
 }
 
-/* =========================
-   Close Button
-========================= */
 .close {
     position: absolute;
     top: 10px;
@@ -128,38 +151,11 @@ button:active {
     transform: scale(1.2);
 }
 
-/* =========================
-   Message Styling
-========================= */
 #modalMessage {
     margin-top: 10px;
     font-size: 1.05rem;
     line-height: 1.5;
 }
-
-/* =========================
-   Animations
-========================= */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-@keyframes scaleUp {
-    from {transform: scale(0.9);}
-    to {transform: scale(1);}
-}
-
-
-/* Animations */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-@keyframes scaleUp {
-    from {transform: scale(0.9);}
-    to {transform: scale(1);}
-}
-
 
 /* =========================
    Result Display
@@ -175,26 +171,26 @@ button:active {
 }
 
 /* =========================
-   Animation
+   Animations
 ========================= */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(5px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes scaleUp {
+    from { transform: scale(0.9); }
+    to { transform: scale(1); }
+}
+
 /* =========================
    Responsive Design
 ========================= */
 @media (max-width: 768px) {
-    h2{
-        font-size: 1rem;
+    h2 {
+        font-size: 1.4rem;
     }
-    #numberInput {
-        width: 50%;
+    .container {
+        padding: 20px;
     }
-    button {
-        width: 30%;
-        margin-top: 10px;
-    }
-    
 }
