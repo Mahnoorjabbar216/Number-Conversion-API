@@ -8,16 +8,20 @@
     </head>
 
     <body>
+        <div class="container">
         <h2>🔢 Number Conversion API</h2>
         <p class="subtitle">Convert numbers to words or dollars instantly.</p>
-        <input type="number" id="numberInput" placeholder="enter a number">
+
+        <input type="number" id="numberInput" placeholder="Enter a Number">
         <select id="conversionType">
             <option value="NumberToWords">Number to Words</option>
             <option value="NumberToDollars">Number to Dollars</option>
         </select>
-        <br>
+        
         <button onclick="convertNumber()">Convert</button>
         <div id="result"></div>
+    </div>
+
 
         <!-- Custom Modal -->
         <div id="customModal" class="modal">
@@ -26,6 +30,11 @@
                 <p id="modalMessage"></p>
             </div>
         </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>© 2025 Number Converter | Powered by SOAP API </p>
+        </footer>
 
         <script src="script.js"></script>
     </body>
